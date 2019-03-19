@@ -2,11 +2,14 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
-  memory: 1G
+  - route: allocations-pal-sanjoe-vinod.cfapps.io
+  memory: 475M
+  disk_quota: 475M
   instances: 1
+  buildpack: java_buildpack
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://FILL_ME_IN
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-sanjoe-vinod.cfapps.io
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
+    JAVA_OPTS: '-Xms64m -Xmx256m'
   services:
   - tracker-allocations-database
