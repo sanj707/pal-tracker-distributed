@@ -19,8 +19,8 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
-        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
+        - chmod a+x gradlew
         - ./gradlew testMigrate
       script: ./gradlew clean build
       before_deploy:
