@@ -3,15 +3,11 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: allocations-pal-sanjoe-vinod.apps.dev.pcf-aws.com
-  memory: 475M
-  disk_quota: 475M
   instances: 1
   env:
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
-    JAVA_OPTS: '-Xms64m -Xmx256m'
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'
     GRANT_TYPE: client_credentials
   services:
   - tracker-allocations-database
   - tracker-service-registry
-  - tracker-circuit-breaker-
-  - tracker-sso
+  - tracker-circuit-breaker-dashboard
