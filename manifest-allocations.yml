@@ -2,7 +2,7 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-sanjoe-vinod.cfapps.io
+  - route: allocations-pal-sanjoe-vinod.apps.dev.pcf-aws.com
   memory: 475M
   disk_quota: 475M
   instances: 1

@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-sanjoe-vinod.cfapps.io
+  - route: registration-pal-sanjoe-vinod.apps.dev.pcf-aws.com
   memory: 475M
   disk_quota: 475M
   instances: 1
