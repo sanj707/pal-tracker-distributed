@@ -2,12 +2,17 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-sanjoe-vindo.apps.dev.pcf-aws.com
+  - route: backlog-pal-sanjoe-vindo.cfapps.io
   instances: 1
+  memory: 475M
+  disk_quota: 475M
   env:
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}, memory_calculator: { stack_threads: 100} }'
+    JAVA_OPTS: '-Xms64m -Xmx256m'
     GRANT_TYPE: client_credentials
   services:
   - tracker-backlog-database
-  - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-service-registry
+  - tracker-sso
+
