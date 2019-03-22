@@ -2,7 +2,7 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-sanjoe-vindo.cfapps.io
+  - route: backlog-pal-sanjoe-vindo2.cfapps.io
   instances: 1
   memory: 475M
   disk_quota: 475M
